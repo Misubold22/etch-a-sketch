@@ -1,0 +1,40 @@
+#grid-container {
+   display: flex;
+   flex-wrap: wrap;
+   width: 500px;
+   height: 500px;
+   background-color: white;
+}
+
+.grid-item {
+   width: calc(100% / 16);
+   box-sizing: border-box; 
+   border: 1px solid #ccc; 
+   flex-wrap: wrap;
+}
+
+#main-container {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   position: relative;
+   margin-top: 100px;
+}
+
+#tablet {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: lightblue;
+   border-radius: 25px;
+   width: 750px;
+   height: 700px;
+}
+
+#tablet h2 {
+   font-size: 2em;
+   padding: 10px;
+   color: #EA4C89;
+   font-family: 'Lobster', cursive;
+}
+
