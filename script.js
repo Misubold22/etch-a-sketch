@@ -11,13 +11,13 @@ for (let i = 0; i < gridSize * gridSize; i++) {
 
 document.getElementById('changeGrid').addEventListener('click', () => {
     while (true) {
-        newGrid = prompt("Enter the number of squares per side (less than 100):");
+        newGrid = prompt("Enter the number of squares per side (1-99):");
         
         if (newGrid < 100) {
             gridContainer.innerHTML = ''; // Clear the grid container
             break; 
         } else {
-            alert("Please enter a number less than 100."); 
+            alert("Please enter the number of squares per side (1-99):"); 
         }
     }
   
@@ -76,4 +76,19 @@ function eraseColor() {
     }
 }
 
+function randomRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`; // Return a random RGB color
+}
+
+function randomColor() {
+    const divs = document.querySelectorAll('.grid-item');
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].onmousemove = function(e) {
+            e.target.style.backgroundColor = randomRGB(); // Set a random color on mouse move
+        };
+    }
+}
 
