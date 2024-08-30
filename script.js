@@ -60,6 +60,20 @@ for (let i = 0; i < divs.length; i++) {
     };
 }
 
+function resetColor() {
+    const divs = document.querySelectorAll(".grid-item");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = "white"; // Reset the color of each grid item
+    }
+}
 
+function eraseColor() {
+    let divs = document.querySelectorAll('.grid-item');
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].onmousemove = function(e) {
+            e.target.style.backgroundColor = 'white'; // Erase color by setting it to white
+        };
+    }
+}
 
 
